@@ -30,6 +30,30 @@
     <!-- touch icon -->
     <title>Spoider</title>
     <style>
+        @font-face {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            src: local(""), url("../fonts/inter-v12-latin-regular.woff2") format("woff2"), url("../fonts/inter-v12-latin-regular.woff") format("woff");
+            font-display: block;
+        }
+        
+        @font-face {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 500;
+            src: local(""), url("../fonts/inter-v12-latin-500.woff2") format("woff2"), url("../fonts/inter-v12-latin-500.woff") format("woff");
+            font-display: block;
+        }
+        
+        @font-face {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            src: local(""), url("../fonts/inter-v12-latin-700.woff2") format("woff2"), url("../fonts/inter-v12-latin-700.woff") format("woff");
+            font-display: block;
+        }
+        
         .section-container {
             background-color: #f8f8f8;
             padding: 50px 0;
@@ -117,6 +141,61 @@
             font-size: 16px;
             color: #666;
         }
+        /* Add your global CSS styles here */
+        
+        .services-section {
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        .services-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .services-button {
+            text-align: center;
+        }
+        
+        .cta-button {
+            background-color: #df5611;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .service-card {
+            max-width: 300px;
+            margin: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .service-card-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .service-card-content {
+            padding: 20px;
+        }
+        /* Add media queries for responsiveness as needed */
     </style>
 </head>
 
@@ -230,55 +309,58 @@
         </div>
         <!-- slideshow content end -->
         <!-- section content begin -->
-        <div class="section-container">
+        <!-- Section content begin -->
+        <div class="services-section">
             <div class="container">
-                <div class="intro">
+                <div class="services-intro">
                     <h2>Discover Our Services</h2>
-                    <p class="highlight-text" style="color: #df5611;">Explore our range of services and find the perfect solution for your needs.</p>
+                    <p class="highlight-text">Explore our range of services and find the perfect solution for your needs.</p>
                 </div>
-                <div class="button-container">
-                    <a class="cta-button" style="color: antiquewhite;" href="#">Find Out More <i class="fas fa-angle-right"></i></a>
+                <div class="services-button">
+                    <a class="cta-button" href="#">Find Out More <i class="fas fa-angle-right"></i></a>
                 </div>
             </div>
-            <div class="card-container" style="margin: 40px;">
-                <div class="card">
-                    <div class="card-image">
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-card-image">
                         <img src="static/img/user/spoiderco.jpg" alt="Spoider">
                     </div>
-                    <div class="card-content">
+                    <div class="service-card-content">
                         <h3>Spoider</h3>
                         <p>Spoider is your trusted partner for hyperlocal deliveries and auto bookings in Coimbatore.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">
+                <div class="service-card">
+                    <div class="service-card-image">
                         <img src="static/img/user/lovert.png" alt="Lovert">
                     </div>
-                    <div class="card-content">
+                    <div class="service-card-content">
                         <h3>Lovert</h3>
                         <p>Experience seamless event management with Lovert. Plan and execute your events effortlessly.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">
+                <div class="service-card">
+                    <div class="service-card-image">
                         <img src="static/img/user/sh.png" alt="SH IT Solutions">
                     </div>
-                    <div class="card-content">
+                    <div class="service-card-content">
                         <h3>SH IT Solutions</h3>
                         <p>Get expert assistance with business management, scaling, production, financial management, and digital marketing.</p>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">
+                <div class="service-card">
+                    <div class="service-card-image">
                         <img src="static/img/user/au.png" alt="Abundance">
                     </div>
-                    <div class="card-content">
+                    <div class="service-card-content">
                         <h3>Abundance</h3>
                         <p>Abundance offers technology solutions for government projects, backed by our experienced staff.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Section content end -->
+
         <!-- section content end -->
         <!-- section content begin -->
         <div class="uk-section in-liquid-2">
