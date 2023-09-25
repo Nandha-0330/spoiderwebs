@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Premium HTML5 Template by Indonez">
+    <meta name="keywords" content="blockit, uikit3, indonez, handlebars, scss, javascript">
+    <meta name="author" content="Indonez">
+    <meta name="theme-color" content="#FC5B3F">
+    <!-- preload assets -->
+    <link rel="preload" href="static/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="static/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="static/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="static/fonts/inter-v12-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="static/fonts/inter-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="preload" href="static/css/style.css" as="style">
+    <link rel="preload" href="static/js/vendors/uikit.min.js" as="script">
+    <link rel="preload" href="static/js/utilities.min.js" as="script">
+    <link rel="preload" href="static/js/config-theme.js" as="script">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- uikit -->
+    <script src="static/js/vendors/uikit.min.js"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="static/img/apple-touch-icon.jpg" type="image/x-icon">
+    <!-- touch icon -->
+    <title>Spoider</title>
+    <style>
+        .section-container {
+            background-color: #f8f8f8;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .intro h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-text {
+            color: #007bff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .button-container {
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #df5611;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        /* Styles for the cards */
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .card {
+            flex-basis: calc(25% - 20px);
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            font-size: 24px;
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    <div id="flash-messages" class="flash-messages-right-bottom">
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="flash-message ">{{messages}}</div>
+        {% endif %} {% endwith %}
+    </div> -->
+    <!-- page loader begin -->
+    <div class="page-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- page loader end -->
+    <!-- header begin -->
+    <header>
+        <div class="uk-section uk-padding-remove-vertical">
+            <nav class="uk-navbar-container" data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top;">
+                <div class="uk-container" data-uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-item uk-logo" href="#">
+                            <img src="static/img/user/spoiderlogo.png" alt="logo" width="140" height="34" style="padding-left: 25px;">
+                        </a>
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            <li><a href="#">Home</a>
+                            </li>
+                            <li><a href="#">Services</a>
+                            </li>
+                            <li><a href="#">Carreers</a>
+                            </li>
+                            <li><a href="#">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <div class="uk-navbar-item uk-visible@m in-optional-nav">
+
+                            <!-- User is not logged in -->
+                            <a href="#" class="uk-button uk-button-primary uk-border-rounded">Create Account / Login</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- header end -->
+    <main>
+        <!-- slideshow content begin -->
+        <div class="uk-section uk-padding-remove-vertical ">
+            <div class="uk-light in-slideshow uk-background-cover uk-background-top-center" style="background-image: url(img/in-liquid-slide-bg.png);" data-uk-slideshow>
+                <ul class="uk-slideshow-items ">
+                    <li>
+                        <div class="uk-container">
+                            <div class="uk-grid-medium uk-grid" data-uk-grid="">
+                                <div class="uk-width-1-2@s uk-first-column">
+                                    <div class="uk-overlay">
+                                        <h2>Your Perfect<br>Transport Partner.</h2>
+                                        <p class="uk-text-lead uk-visible@m">Hyperlocal Delivery, Domestic and International Deliveries and Shipping Logistics</p>
+                                        <a href="#" class="uk-button uk-button-default uk-border-rounded uk-visible@s">Discover platform</a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2@s">
+                                    <img class="in-slide-img" src="static/img/transport.png" data-src="static/img/transport.png" alt="image-slide" width="600" height="700" data-uk-img="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-container">
+                            <div class="uk-grid-medium uk-grid" data-uk-grid="">
+                                <div class="uk-width-1-2@s uk-first-column">
+                                    <div class="uk-overlay">
+                                        <h2>Your Perfect<br>Event Organizer.</h2>
+                                        <p class="uk-text-lead uk-visible@m">Corporate,Marriage Events, Parties and Concept Event Organizer</p>
+                                        <a href="#" class="uk-button uk-button-default uk-border-rounded uk-visible@s">Discover platform</a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2@s">
+                                    <img class="in-slide-img" src="static/img/event.png" data-src="static/img/event.png" alt="image-slide" width="500" height="400" data-uk-img="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-container">
+                            <div class="uk-grid-medium uk-grid" data-uk-grid="">
+                                <div class="uk-width-1-2@s uk-first-column">
+                                    <div class="uk-overlay">
+                                        <h2>Your Perfect<br>Business Partner.</h2>
+                                        <p class="uk-text-lead uk-visible@m">We are your loyal partner on the road to business growth.</p>
+                                        <a href="#" class="uk-button uk-button-default uk-border-rounded uk-visible@s">Discover platform</a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2@s">
+                                    <img class="in-slide-img" src="static/img/in-lazy.gif" data-src="static/img/partner.png" width="500" height="400" alt="image-slide" data-uk-img="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-previous data-uk-slideshow-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" data-uk-slidenav-next data-uk-slideshow-item="next"></a>
+
+
+
+            </div>
+        </div>
+        <!-- slideshow content end -->
+        <!-- section content begin -->
+        <div class="section-container">
+            <div class="container">
+                <div class="intro">
+                    <h2>Discover Our Services</h2>
+                    <p class="highlight-text" style="color: #df5611;">Explore our range of services and find the perfect solution for your needs.</p>
+                </div>
+                <div class="button-container">
+                    <a class="cta-button" style="color: antiquewhite;" href="#">Find Out More <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="card-container" style="margin: 40px;">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/img/user/spoiderco.jpg" alt="Spoider">
+                    </div>
+                    <div class="card-content">
+                        <h3>Spoider</h3>
+                        <p>Spoider is your trusted partner for hyperlocal deliveries and auto bookings in Coimbatore.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/img/user/lovert.png" alt="Lovert">
+                    </div>
+                    <div class="card-content">
+                        <h3>Lovert</h3>
+                        <p>Experience seamless event management with Lovert. Plan and execute your events effortlessly.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/img/user/sh.png" alt="SH IT Solutions">
+                    </div>
+                    <div class="card-content">
+                        <h3>SH IT Solutions</h3>
+                        <p>Get expert assistance with business management, scaling, production, financial management, and digital marketing.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/img/user/au.png" alt="Abundance">
+                    </div>
+                    <div class="card-content">
+                        <h3>Abundance</h3>
+                        <p>Abundance offers technology solutions for government projects, backed by our experienced staff.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section content end -->
+        <!-- section content begin -->
+        <div class="uk-section in-liquid-2">
+            <div class="uk-container">
+                <div class="uk-grid-large uk-child-width-1-2@m" data-uk-grid>
+                    <div class="uk-flex uk-flex-left">
+                        <div class="uk-margin-right">
+                            <img src="static/img/in-lazy.gif" data-src="static/img/user/spoiderco.jpg" alt="sample-icon" width="128" height="128" data-uk-img>
+                        </div>
+                        <div>
+                            <h3>Spoider</h3>
+                            <p>Spoider stands out by offering hyperlocal, domestic, and international delivery solutions with an innovative, costeffective auto-booking system.</p>
+                            <a class="uk-button uk-button-text" href="#">Learn more<i class="fas fa-long-arrow-alt-right uk-margin-small-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-left">
+                        <div class="uk-margin-right">
+                            <img src="static/img/in-lazy.gif" data-src="static/img/user/lovert.png" alt="sample-icon" width="128" height="128" data-uk-img>
+                        </div>
+                        <div>
+                            <h3>Lovert</h3>
+                            <p>We are the first in India to introduce Food dates with starangers in cafes through the Lovert event.
+                            </p>
+                            <a class="uk-button uk-button-text" href="#">Learn more<i class="fas fa-long-arrow-alt-right uk-margin-small-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-left">
+                        <div class="uk-margin-right">
+                            <img src="static/img/in-lazy.gif" data-src="static/img/user/sh.png" alt="sample-icon" width="128" height="128" data-uk-img>
+                        </div>
+                        <div>
+                            <h3>SH IT Solutions</h3>
+                            <p>Basically, startups have ideas but lack a good team to build them. Here, we will assist them by providing our expert team to help them grow their firm.</p>
+                            <a class="uk-button uk-button-text" href="#">Learn more<i class="fas fa-long-arrow-alt-right uk-margin-small-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="uk-flex uk-flex-left">
+                        <div class="uk-margin-right">
+                            <img src="static/img/in-lazy.gif" data-src="static/img/user/au.png" alt="sample-icon" width="128" height="128" data-uk-img>
+                        </div>
+                        <div>
+                            <h3>Abundance</h3>
+                            <p>A universe of tech is a corporation that will take on government projects as a tendor and work with our experienced staff.</p>
+                            <a class="uk-button uk-button-text" href="#">Learn more<i class="fas fa-long-arrow-alt-right uk-margin-small-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid uk-flex uk-flex-center">
+                    <div class="uk-width-5-6@m uk-margin-medium-top">
+                        <div class="uk-card uk-card-default uk-card-body uk-background-contain uk-background-top-left" style="background-image: url(img/in-liquid-card-bg.png);" data-uk-img>
+                            <div class="uk-grid uk-child-width-1-3@s uk-child-width-1-3@m uk-text-center" data-uk-grid>
+                                <div class="uk-width-1-1">
+                                    <h4><span>Simple steps to contact us.</span></h4>
+                                </div>
+                                <div>
+                                    <span class="in-icon-wrap circle uk-margin-auto">1</span>
+                                    <p>Register account</p>
+                                </div>
+                                <div>
+                                    <span class="in-icon-wrap circle uk-margin-auto">2</span>
+                                    <p>Support Form Submit</p>
+                                </div>
+                                <div>
+                                    <span class="in-icon-wrap circle uk-margin-auto">3</span>
+                                    <p>Team Will Get Connect</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <!-- footer begin -->
+    <footer>
+        <div class="uk-section uk-section-secondary in-footer-feature uk-margin-medium-top">
+            <div class="uk-container">
+                <div class="uk-grid uk-flex uk-flex-center">
+                    <div class="uk-width-5-6@m">
+                        <div class="uk-grid uk-grid-collapse uk-child-width-1-3@s" data-uk-grid="">
+                            <div class="uk-flex uk-flex-middle">
+                                <div class="in-icon-wrap uk-margin-right">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h6 class="uk-margin-remove">NGI TBI,Thirumalayampalayam,CBE</h6>
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-center@m">
+                                <div class="in-icon-wrap uk-margin-right">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </div>
+                                <div>
+                                    <h6 class="uk-margin-remove">9042506839,7058508389</h6>
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-right@m">
+                                <div class="in-icon-wrap uk-margin-right">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="uk-margin-remove">admin@spoider.in</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-section uk-background-secondary uk-light">
+            <div class="uk-container uk-text-small">
+                <div class="uk-child-width-1-2@m" data-uk-grid="">
+                    <div class="in-footer-logo">
+                        <img src="static/img/user/spoiderlogo.png" alt="Speed Hub Logo" width="140" height="34" style="padding-left: 25px;">
+                    </div>
+                    <div class="uk-flex uk-flex-right@m">
+                        <!-- Social media links begin -->
+                        <div class="uk-flex social-media-list">
+                            <div><a href="[Your Facebook Link]" class="color-facebook text-decoration-none"><i class="fab fa-facebook-square"></i> Facebook</a></div>
+                            <div><a href="[Your Twitter Link]" class="color-twitter text-decoration-none"><i class="fab fa-twitter"></i> Twitter</a></div>
+                            <div><a href="[Your Instagram Link]" class="color-instagram text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a></div>
+                            <div><a href="[Your Telegram Link]" class="color-telegram text-decoration-none"><i class="fab fa-telegram"></i> Telegram</a></div>
+                            <div><a href="[Your YouTube Link]" class="color-youtube text-decoration-none"><i class="fab fa-youtube"></i> Youtube</a></div>
+                        </div>
+                        <!-- Social media links end -->
+                        <a class="uk-button uk-button-text uk-margin-large-left uk-visible@m" href="#">Company News</a>
+                        <a class="uk-button uk-button-text uk-margin-large-left uk-visible@m" href="#">Partnership</a>
+                    </div>
+                </div>
+                <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-margin-large-top" data-uk-grid="">
+                    <div>
+                        <h5>Our Services</h5>
+                        <ul class="uk-list uk-link-text">
+                            <li><a href="#">Spoider - Transportation</a></li>
+                            <li><a href="#">Lovert - Event Management</a></li>
+                            <li><a href="#">SH IT Park - Business Solutions</a></li>
+                            <li><a href="#">Abundance - Government Projects</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Our Products</h5>
+                        <ul class="uk-list uk-link-text">
+                            <li><a href="#">Spoider - Hyperlocal Delivery</a></li>
+                            <li><a href="#">Abundance - Government Projects</a></li>
+                            <li><a href="#">Lovert - Cafe Events</a></li>
+                            <li><a href="#">Cloud Kitchens - Food Delivery</a></li>
+                            <li><a href="#">E-Commerce - Online Retail</a></li>
+                            <li><a href="#">Users - Auto Ride Booking</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Our Services</h5>
+                        <ul class="uk-list uk-link-text">
+                            <li><a href="#">Spoider - Introverts</a></li>
+                            <li><a href="#">Lovert - Cafe Owners</a></li>
+                            <li><a href="#">Abundance - Government Initiatives</a></li>
+                            <li><a href="#">Startup's - Business Development</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="uk-grid uk-margin-large-top">
+                    <div class="uk-width-1-1">
+                        <p class="copyright-text uk-heading-line"><span>Copyright ©2023 Speed Hub. All Rights Reserved.</span></p>
+
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <!-- footer end -->
+    <!-- to top begin -->
+    <a href="#" class="to-top uk-visible@m" data-uk-scroll>
+        Top<i class="fas fa-chevron-up" ></i>
+    </a>
+    <!-- to top end -->
+    <!-- javascript -->
+    <script src="static/js/utilities.min.js"></script>
+    <script src="static/js/config-theme.js"></script>
+</body>
+
+</html>
